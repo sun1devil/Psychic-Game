@@ -43,18 +43,26 @@
         console.log("User guesses: " + userGuess);
         var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
         console.log("Random Letter: " + randomLetter);
-    // compare matches
+    // compare doesnt match //
     if (randomLetter != userGuess)
     console.log("NOPE!!");
-    document.getElementById("message").innerHTML = "NOPE!!!!!";
+    document.getElementById("message").innerHTML = "Guess Again!!!!!";
     guessesLeft--;
     document.getElementById("guesses-left").innerHTML = guessesLeft;
     lossCount++;
-    document.getElementById("losses").innerHTML = lossCount;
-    // else if( random == userGuess){
-    //     console.log("YAY!!")
-    }
+    document.getElementById("losses").innerHTML = lossCount;}
+    //   If Equal  //
+    // // else ( random == userGuess)
+    // //      console.log("YAY!!");
+    // document.getElementById("message").innerHTML = "YAY!!!!!!";
+    // winCount++;
+    // document.getElementById("wins").innerHTML = winCount;
+    // }
+    //Stop game
     
+    if( guessesLeft <= 0){
+        console.log( "loser");
+    }
     
     //Alert which guess
     // // Generate random letter function//
