@@ -1,0 +1,62 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- // This is the html display -->
+    <body>
+        <div id="Psychic Game">
+            <h1>The Psychic Game</h1>
+    
+            <h2>Guess what letter I am thinking of?</h2>
+        
+            <h3>Wins:</h3>  <div id="wins"></div>
+        
+            <h3>Losses:</h3>  <div id="losses"></div>
+        
+            <h3>Guesses Remaining:</h3> <div id="guesses-left"></div>
+        
+            <h3>Your Guesses:</h3> <div id="user-guesses"></div>
+
+            <h1 id="message"></h1>
+        </div>
+   <script src="main.js">
+    // Create Variables //
+        var alphabet = ["a", "b", "c","d", "e", "f", "g","h", "i", "j", "k","l", "m", "n", "o","p", "q", "r", "s","t", "u", "v", "w","x", "y", "z"]
+        var winCount = 0
+        var lossCount = 0
+        var userGuess = ?????
+        var guessesLeft = 10
+    // function runs when user presses key//
+    document.onkeyup = function (keypress) {
+    // which key was pressed.
+        var userGuess = keypress.key;
+    // Show what key the user presse//
+        document.getElementById("user-guesses").innerHTML = userGuess;
+    //Alert which guess
+            console.log("User guesses: " + userGuess);
+    // Generate random letter function//
+    var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+            console.log[alphabet];
+    
+    // logic compare values if match, plus win, else +loss, then display
+
+    //  
+    if (guessesLeft = 0)
+            document.getElementById("message").innerHTML = "LOSER!!!!";
+            else {
+                document.getElementById("message").innerHTML = "Keep Guessing!";
+            }
+
+        }
+
+    </script>
+</head>
+
+
+
+</body>
+</html>
