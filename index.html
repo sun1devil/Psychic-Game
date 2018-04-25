@@ -31,59 +31,83 @@
         // var userGuess = "placeholder"
         var guessesLeft = 10;   
         var guessesSoFar = [];
+        var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(randomLetter);
     // function runs when user presses key//
-        document.onkeydown = function (event) {
+    function resetGame(){
+        guessesSoFar = [];
+        document.getElementById("user-guesses").innerHTML = guessesSoFar;
+        randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        guessesLeft = 10;
+        document.getElementById("guesses-left").innerHTML = guessesLeft;
+        console.log(randomLetter)
+    }
+    document.onkeydown = function (event) {
     // which key was pressed.
         var userGuess = event.key;
     // Show what key the user presse//
-        console.log(userGuess);
-        guessesSoFar.push(userGuess);
-        console.log(guessesSoFar);
-        document.getElementById("user-guesses").innerHTML = guessesSoFar;
-        console.log("User guesses: " + userGuess);
-        var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-        console.log("Random Letter: " + randomLetter);
-    // compare doesnt match //
-    if (randomLetter != userGuess)
-    console.log("NOPE!!");
-    document.getElementById("message").innerHTML = "Guess Again!!!!!";
-    guessesLeft--;
-    document.getElementById("guesses-left").innerHTML = guessesLeft;
-    lossCount++;
-    document.getElementById("losses").innerHTML = lossCount;}
-    //   If Equal  //
-    // // else ( random == userGuess)
-    // //      console.log("YAY!!");
-    // document.getElementById("message").innerHTML = "YAY!!!!!!";
-    // winCount++;
-    // document.getElementById("wins").innerHTML = winCount;
-    // }
-    //Stop game
-    
-    if( guessesLeft <= 0){
-        console.log( "loser");
-    }
-    
-    //Alert which guess
-    // // Generate random letter function//
-    // //logs random letter
-    
-
-
-    // // logic if no match
-    // if 
-        // guessesLeft--;
-    
+        if (userGuess = guessesSoFar.indexOf[-1]){
+            guessesSoFar.push(userGuess);
+            document.getElementById("user-guesses").innerHTML = guessesSoFar;
+        }
+                  
+    // compare matches //
+        if (randomLetter === userGuess){
+            winCount++;
+            document.getElementById("message").innerHTML = "You are PSYCHIC!! Play Again?";
+            document.getElementById("wins").innerHTML = winCount;
+            resetGame();
+        }else if (guessesLeft < 1){
+                document.getElementById("message").innerHTML = "You LOSE! Try A New Letter!";
+                lossCount++;
+                document.getElementById("losses").innerHTML = lossCount;
+                resetGame();
+        }   
+        else {
+            document.getElementById("message").innerHTML = "Guess Again!!!!!";
+            guessesLeft--;
+            document.getElementById("guesses-left").innerHTML = guessesLeft;
+        }   
+        // //  no more guesses
+             
+        
+        //   If Equal  //
+        // else if( random == userGuess){
+        //      console.log("YAY!!");
+        // document.getElementById("message").innerHTML = "YAY!!!!!!";
+        // winCount++;
+        // document.getElementById("wins").innerHTML = winCount;
+        // }
+        
+        
+        // if(guessesLeft <= 0){
+        // console.log( "loser");
+        // lossCount++;
+        // document.getElementById("losses").innerHTML = lossCount;
+        // document.getElementById("message").innerHTML = "LOSER!!!!";}
+        // //Reset game    
+        // }
+        
+        //Alert which guess
+        // // Generate random letter function//
+        // //logs random letter
         
 
-    // //  no more guesses
-    // if (guessesLeft >= 0){
-    //         document.getElementById("message").innerHTML = "LOSER!!!!";
-    //         else {
-    //             document.getElementById("message").innerHTML = "Keep Guessing!";
-    //         }
 
-    //     }
+        // // logic if no match
+        // if 
+            // guessesLeft--;
+        
+            
+
+        // //  no more guesses
+        // if (guessesLeft <= 0){
+        //         document.getElementById("message").innerHTML = "LOSER!!!!";
+        //         else {
+        //             document.getElementById("message").innerHTML = "Keep Guessing!";
+        //         }
+
+            }
 
     </script>
 </head>
