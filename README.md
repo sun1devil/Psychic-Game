@@ -2,8 +2,8 @@
 Psychic game using javascript
 This project created an portfolio site and added bootstarap components for style and also added a responsonsive element the first project designed to style a basic web page using CSS
 Link:
-https://sun1devil.github.io/Bootstrap-Portfolio/
-https://github.com/sun1devil
+https://github.com/sun1devil/Psychic-Game
+https://sun1devil.github.io/Psychic-Game/
 
 Built With
 html, javascript
