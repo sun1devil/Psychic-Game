@@ -28,7 +28,7 @@
         var alphabet = ["a", "b", "c","d", "e", "f", "g","h", "i", "j", "k","l", "m", "n", "o","p", "q", "r", "s","t", "u", "v", "w","x", "y", "z"];
         var winCount = 0;
         var lossCount = 0;
-        // var userGuess = "placeholder"
+        var userGuess = ""
         var guessesLeft = 10;   
         var guessesSoFar = [];
         var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -44,30 +44,34 @@
     }
     document.onkeydown = function (event) {
     // which key was pressed.
-        var userGuess = event.key;
-    // Show what key the user presse//
-        if (userGuess = guessesSoFar.indexOf[-1]){
+        userGuess = event.key;
+        // Show what key the user presse//
+            document.getElementById("message").innerHTML = "";
+        if (guessesSoFar.indexOf(userGuess) === -1){
             guessesSoFar.push(userGuess);
             document.getElementById("user-guesses").innerHTML = guessesSoFar;
-        }
-                  
-    // compare matches //
-        if (randomLetter === userGuess){
-            winCount++;
-            document.getElementById("message").innerHTML = "You are PSYCHIC!! Play Again?";
-            document.getElementById("wins").innerHTML = winCount;
-            resetGame();
-        }else if (guessesLeft < 1){
-                document.getElementById("message").innerHTML = "You LOSE! Try A New Letter!";
-                lossCount++;
-                document.getElementById("losses").innerHTML = lossCount;
+            if (randomLetter === userGuess){
+                winCount++;
+                document.getElementById("message").innerHTML = "You are PSYCHIC!! Play Again?";
+                document.getElementById("wins").innerHTML = winCount;
                 resetGame();
-        }   
-        else {
-            document.getElementById("message").innerHTML = "Guess Again!!!!!";
-            guessesLeft--;
-            document.getElementById("guesses-left").innerHTML = guessesLeft;
-        }   
+            }else if (guessesLeft < 1){
+                    document.getElementById("message").innerHTML = "You LOSE! Try A New Letter!";
+                    lossCount++;
+                    document.getElementById("losses").innerHTML = lossCount;
+                    resetGame();
+            }   
+            else {
+                document.getElementById("message").innerHTML = "Guess Again!!!!!";
+                guessesLeft--;
+                document.getElementById("guesses-left").innerHTML = guessesLeft;
+            }
+        } else {
+            document.getElementById("message").innerHTML = "Letter already Guessed?";
+        }
+    
+    // compare matches //
+    }   
         // //  no more guesses
              
         
@@ -107,7 +111,7 @@
         //             document.getElementById("message").innerHTML = "Keep Guessing!";
         //         }
 
-            }
+            
 
     </script>
 </head>
